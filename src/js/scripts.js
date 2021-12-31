@@ -1,3 +1,3 @@
 import "../css/styles.css";
 
-alert("scripts.js loaded");
+console.log("scripts.js loaded");
