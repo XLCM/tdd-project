@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/XLCM/tdd-project#readme",
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "bulma": "^0.9.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
