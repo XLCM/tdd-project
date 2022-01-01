@@ -7,21 +7,16 @@ describe("PlanetaryCalculator", () => {
     expect(planetaryCalculator.now).toEqual(now);
   });
 
+  let birthDate;
+  beforeEach(() => {
+    birthDate = new PlanetaryCalculator("1978 September 4");
+  });
+
   test("should create new object with birthday given a date and return in ms", () => {
-    let birthday = "1978 September 4";
-    let birthDate = new PlanetaryCalculator(birthday);
     expect(birthDate.birthday).toEqual(273740400000);
   });
 
-  // beforeEach(() => {
-  //   let now = 1641073333289;
-  //   let birthday = 273740400000;
-  // });
-
   test("should return difference between now and birthday in ms", () => {
-    let birthday = "1978 September 4";
-    let birthDate = new PlanetaryCalculator(birthday);
-    let now = new Date().getTime();
     expect(birthDate.age).toBeGreaterThan(1367332933289);
   });
 });
