@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "start": "npm run build; webpack-dev-server --open",
-    "lint": "eslint src/*.js"
+    "lint": "eslint src/*.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
     "mini-css-extract-plugin": "^2.4.5",
     "node-sass": "^7.0.1",
     "sass": "^1.45.2",
