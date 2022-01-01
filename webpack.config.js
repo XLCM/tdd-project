@@ -25,7 +25,6 @@ module.exports = {
       inject: "body",
     }),
     new MiniCssExtractPlugin({
-      // filename: "css/mystyles.css",
       filename: "./src/css/styles.css",
     }),
   ],
