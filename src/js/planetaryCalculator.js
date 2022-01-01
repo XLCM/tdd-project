@@ -1,3 +1,5 @@
-alert("planetaryCalculator.js loaded");
-
-export class PlanetaryCalculator {}
+export class PlanetaryCalculator {
+  constructor(birthday) {
+    this.birthday = new Date(birthday).getTime();
+  }
+}
