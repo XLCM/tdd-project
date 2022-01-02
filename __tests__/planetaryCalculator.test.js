@@ -50,6 +50,12 @@ describe("PlanetaryCalculator", () => {
     );
   });
 
+  test("should return years left to live on mercury", () => {
+    expect(birthDate.planets.mercury.yearsLeft()).toEqual(
+      "You have lived 101.74 years longer than expected on Mercury."
+    );
+  });
+
   // VENUS TESTS
   test("should calculate venus age given earth birthdate", () => {
     expect(birthDate.planets.venus.yearsOld).toEqual(69.88);
