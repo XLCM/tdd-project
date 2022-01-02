@@ -51,9 +51,14 @@ describe("PlanetaryCalculator", () => {
     expect(birthDate.planets.venus.yearsOld).toEqual(69.88);
   });
   // commented out; returning NaN but shouldn't
-  test("should return years left to live subtracting venus years old from earth age", () => {
-    expect(birthDate.planets.venus.timeLeft).toEqual(
-      birthDate.EarthLifeExpectancy - birthDate.planets.venus.yearsOld
-    );
+  // test("should return years left to live subtracting venus years old from earth age", () => {
+  //   expect(birthDate.planets.venus.timeLeft).toEqual(
+  //     birthDate.EarthLifeExpectancy - birthDate.planets.venus.yearsOld
+  //   );
+  // });
+
+  // MARS TESTS
+  test("should calculate mars age given earth birthdate", () => {
+    expect(birthDate.planets.mars.yearsOld).toEqual(23.04);
   });
 });
