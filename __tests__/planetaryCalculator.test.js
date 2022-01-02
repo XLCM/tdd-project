@@ -30,9 +30,9 @@ describe("PlanetaryCalculator", () => {
   });
 
   // commented out; returning NaN but shouldn't
-  // test("should return difference between life expectancy and current age", () => {
-  //   expect(birthDate.planets.earth.timeLeft).toEqual(35.47);
-  // });
+  test("should return difference between life expectancy and current age", () => {
+    expect(birthDate.planets.earth.timeLeft()).toEqual(35.57);
+  });
 
   // MERCURY TESTS
   test("should calculate mercury age given earth birthdate", () => {

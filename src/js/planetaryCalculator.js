@@ -7,7 +7,11 @@ export class PlanetaryCalculator {
     this.planets = {
       earth: {
         yearsOld: parseFloat(Math.floor((this.age / 31557600000) * 100) / 100),
-        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
+        lifeExpectancy: 78.89,
+        myAge: 43.32,
+        timeLeft() {
+          return this.lifeExpectancy - this.yearsOld;
+        },
       },
       mercury: {
         yearsOld: parseFloat(Math.floor((this.age / 7574031360) * 100) / 100),
