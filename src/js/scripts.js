@@ -20,7 +20,5 @@ let temp = new PlanetaryCalculator("1978 September 4");
 // console.log(`Earth time left type: ${typeof temp.planets.earth.timeLeft}`);
 
 console.log(
-  `Earth time left type: ${
-    temp.planets.earth.lifeExpectancy - temp.planets.earth.yearsOld
-  }`
+  `Earth time left: ${temp.EarthLifeExpectancy - temp.planets.earth.yearsOld}`
 );

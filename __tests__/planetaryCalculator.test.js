@@ -29,6 +29,7 @@ describe("PlanetaryCalculator", () => {
     expect(birthDate.EarthLifeExpectancy).toEqual(78.79);
   });
 
+  // commented out; returning NaN but shouldn't
   // test("should return difference between life expectancy and current age", () => {
   //   expect(birthDate.planets.earth.timeLeft).toEqual(35.47);
   // });
