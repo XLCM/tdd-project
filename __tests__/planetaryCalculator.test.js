@@ -50,4 +50,10 @@ describe("PlanetaryCalculator", () => {
   test("should calculate venus age given earth birthdate", () => {
     expect(birthDate.planets.venus.yearsOld).toEqual(69.88);
   });
+  // commented out; returning NaN but shouldn't
+  test("should return years left to live subtracting venus years old from earth age", () => {
+    expect(birthDate.planets.mercury.timeLeft).toEqual(
+      birthDate.EarthLifeExpectancy - birthDate.planets.venus.yearsOld
+    );
+  });
 });
