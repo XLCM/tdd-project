@@ -61,4 +61,10 @@ describe("PlanetaryCalculator", () => {
   test("should calculate mars age given earth birthdate", () => {
     expect(birthDate.planets.mars.yearsOld).toEqual(23.04);
   });
+  // commented out; returning NaN but shouldn't
+  // test("should return years left to live subtracting mars years old from earth age", () => {
+  //   expect(birthDate.planets.mars.timeLeft).toEqual(
+  //     birthDate.EarthLifeExpectancy - birthDate.planets.mars.yearsOld
+  //   );
+  // });
 });

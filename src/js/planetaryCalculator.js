@@ -19,6 +19,7 @@ export class PlanetaryCalculator {
       },
       mars: {
         yearsOld: parseFloat(Math.floor((this.age / 59328288000) * 100) / 100),
+        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
       },
     };
   }
