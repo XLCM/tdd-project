@@ -21,6 +21,9 @@ export class PlanetaryCalculator {
         yearsOld: parseFloat(Math.floor((this.age / 59328288000) * 100) / 100),
         timeLeft: this.EarthLifeExpectancy - this.yearsOld,
       },
+      jupiter: {
+        yearsOld: parseFloat(Math.floor((this.age / 374273136000) * 100) / 100),
+      },
     };
   }
 }
