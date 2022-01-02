@@ -8,30 +8,44 @@ export class PlanetaryCalculator {
       earth: {
         yearsOld: parseFloat(Math.floor((this.age / 31557600000) * 100) / 100),
         lifeExpectancy: 78.89,
-        myAge: 43.32,
         timeLeft() {
           return this.lifeExpectancy - this.yearsOld;
         },
       },
       mercury: {
         yearsOld: parseFloat(Math.floor((this.age / 7574031360) * 100) / 100),
-        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
+        lifeExpectancy: 78.79,
+        timeLeft() {
+          return this.lifeExpectancy - this.yearsOld;
+        },
       },
       venus: {
         yearsOld: parseFloat(Math.floor((this.age / 19565712000) * 100) / 100),
-        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
+        lifeExpectancy: 78.79,
+        timeLeft() {
+          return this.lifeExpectancy - this.yearsOld;
+        },
       },
       mars: {
         yearsOld: parseFloat(Math.floor((this.age / 59328288000) * 100) / 100),
-        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
+        lifeExpectancy: 78.79,
+        timeLeft() {
+          return this.lifeExpectancy - this.yearsOld;
+        },
       },
       jupiter: {
         yearsOld: parseFloat(Math.floor((this.age / 374273136000) * 100) / 100),
-        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
+        lifeExpectancy: 78.79,
+        timeLeft() {
+          return this.lifeExpectancy - this.yearsOld;
+        },
       },
       saturn: {
         yearsOld: parseFloat(Math.floor((this.age / 927793440000) * 100) / 100),
-        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
+        lifeExpectancy: 78.79,
+        timeLeft() {
+          return this.lifeExpectancy - this.yearsOld;
+        },
       },
     };
   }
