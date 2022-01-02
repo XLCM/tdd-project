@@ -22,7 +22,7 @@ describe("PlanetaryCalculator", () => {
 
   // EARTH TESTS
   test("should calculate earth age given birthdate", () => {
-    expect(birthDate.planets.earth.yearsOld).toEqual(43.32);
+    expect(birthDate.planets.earth.yearsOld).toEqual(43.33);
   });
 
   test("should return earth life expectancy for males", () => {
@@ -30,12 +30,12 @@ describe("PlanetaryCalculator", () => {
   });
 
   test("should return difference between life expectancy and current age", () => {
-    expect(birthDate.planets.earth.timeLeft()).toEqual(35.57);
+    expect(birthDate.planets.earth.timeLeft()).toEqual(35.56);
   });
 
   test("should return years left to live on earth", () => {
     expect(birthDate.planets.earth.yearsLeft()).toEqual(
-      "You have 35.57 years left to live on Earth."
+      "You have 35.56 years left to live on Earth."
     );
   });
 
