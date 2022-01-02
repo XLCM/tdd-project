@@ -23,6 +23,11 @@ export class PlanetaryCalculator {
       },
       jupiter: {
         yearsOld: parseFloat(Math.floor((this.age / 374273136000) * 100) / 100),
+        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
+      },
+      saturn: {
+        yearsOld: parseFloat(Math.floor((this.age / 927793440000) * 100) / 100),
+        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
       },
     };
   }
