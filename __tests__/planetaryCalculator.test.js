@@ -23,4 +23,8 @@ describe("PlanetaryCalculator", () => {
   test("should calculate earth age given birthdate", () => {
     expect(birthDate.planets.earth.yearsOld).toEqual(43.32);
   });
+
+  test("should return earth life expectancy for males", () => {
+    expect(birthDate.planets.earth.lifeExpectancy).toEqual(78.79);
+  });
 });
