@@ -67,6 +67,12 @@ describe("PlanetaryCalculator", () => {
     );
   });
 
+  test("should return years left to live on venus", () => {
+    expect(birthDate.planets.venus.yearsLeft()).toEqual(
+      "You have 8.91 years left to live on Venus."
+    );
+  });
+
   // MARS TESTS
   test("should calculate mars age given earth birthdate", () => {
     expect(birthDate.planets.mars.yearsOld).toEqual(23.04);
@@ -75,6 +81,12 @@ describe("PlanetaryCalculator", () => {
   test("should return years left to live subtracting mars years old from earth age", () => {
     expect(birthDate.planets.mars.timeLeft()).toEqual(
       birthDate.EarthLifeExpectancy - birthDate.planets.mars.yearsOld
+    );
+  });
+
+  test("should return years left to live on mars", () => {
+    expect(birthDate.planets.mars.yearsLeft()).toEqual(
+      "You have 55.75 years left to live on Mars."
     );
   });
 
@@ -89,14 +101,26 @@ describe("PlanetaryCalculator", () => {
     );
   });
 
+  test("should return years left to live on jupiter", () => {
+    expect(birthDate.planets.jupiter.yearsLeft()).toEqual(
+      "You have 75.14 years left to live on Jupiter."
+    );
+  });
+
   // SATURN TESTS
   test("should calculate saturn age given earth birthdate", () => {
     expect(birthDate.planets.saturn.yearsOld).toEqual(1.47);
   });
-  // commented out; returning NaN but shouldn't
+
   test("should return years left to live subtracting jupiter years old from earth age", () => {
     expect(birthDate.planets.jupiter.timeLeft()).toEqual(
       birthDate.EarthLifeExpectancy - birthDate.planets.jupiter.yearsOld
+    );
+  });
+
+  test("should return years left to live on saturn", () => {
+    expect(birthDate.planets.saturn.yearsLeft()).toEqual(
+      "You have 77.32 years left to live on Saturn."
     );
   });
 });
