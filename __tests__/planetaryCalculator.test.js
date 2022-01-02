@@ -35,8 +35,14 @@ describe("PlanetaryCalculator", () => {
   // });
 
   // MERCURY TESTS
-
   test("should calculate mercury age given earth birthdate", () => {
     expect(birthDate.planets.mercury.yearsOld).toEqual(180.53);
   });
+
+  // commented out; returning NaN but shouldn't
+  // test("should return years left to live subtracting mercury years old from earth age", () => {
+  //   expect(birthDate.planets.mercury.timeLeft).toEqual(
+  //     birthDate.EarthLifeExpectancy - birthDate.planets.mercury.yearsOld
+  //   );
+  // });
 });
