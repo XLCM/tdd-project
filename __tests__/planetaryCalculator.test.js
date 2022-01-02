@@ -67,4 +67,9 @@ describe("PlanetaryCalculator", () => {
   //     birthDate.EarthLifeExpectancy - birthDate.planets.mars.yearsOld
   //   );
   // });
+
+  // JUPITER TESTS
+  test("should calculate jupiter age given earth birthdate", () => {
+    expect(birthDate.planets.jupiter.yearsOld).toEqual(3.65);
+  });
 });
