@@ -11,6 +11,13 @@ export class PlanetaryCalculator {
         timeLeft() {
           return this.lifeExpectancy - this.yearsOld;
         },
+        yearsLeft() {
+          if (this.timeLeft() > 0) {
+            return `You have ${this.timeLeft()} years left to live on Earth.`;
+          } else {
+            return `You have lived ${-this.timeLeft()} years longer than expected on Earth.`;
+          }
+        },
       },
       mercury: {
         yearsOld: parseFloat(Math.floor((this.age / 7574031360) * 100) / 100),
