@@ -28,7 +28,11 @@ describe("PlanetaryCalculator", () => {
     expect(birthDate.planets.earth.lifeExpectancy).toEqual(78.79);
   });
 
-  test("should return difference between life expectancy and current age", () => {
-    expect(birthDate.planets.earth.timeLeft).toEqual(35.47);
+  // test("should return difference between life expectancy and current age", () => {
+  //   expect(birthDate.planets.earth.timeLeft).toEqual(35.47);
+  // });
+
+  test("should calculate mercury age given earth birthdate", () => {
+    expect(birthDate.planets.mercury.yearsOld).toEqual(328098055680);
   });
 });
