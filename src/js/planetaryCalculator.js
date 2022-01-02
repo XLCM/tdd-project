@@ -15,6 +15,7 @@ export class PlanetaryCalculator {
       },
       venus: {
         yearsOld: parseFloat(Math.floor((this.age / 19565712000) * 100) / 100),
+        timeLeft: this.EarthLifeExpectancy - this.yearsOld,
       },
     };
   }
