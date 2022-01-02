@@ -2,11 +2,12 @@ export class PlanetaryCalculator {
   constructor(birthday) {
     this.now = new Date().getTime();
     this.birthday = new Date(birthday).getTime();
-    this.age = this.now - this.birthday;
+    this.age = parseInt(this.now - this.birthday);
     this.planets = {
       earth: {
-        yearsOld: Math.floor((this.age / 31557600000) * 100) / 100,
-        lifeExpectancy: 78.79,
+        yearsOld: parseFloat(Math.floor((this.age / 31557600000) * 100) / 100),
+        lifeExpectancy: parseFloat(78.79),
+        timeLeft: this.lifeExpectancy - this.yearsOld,
       },
     };
   }
