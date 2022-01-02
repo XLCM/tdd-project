@@ -62,7 +62,7 @@ describe("PlanetaryCalculator", () => {
   });
 
   test("should return years left to live subtracting venus years old from earth age", () => {
-    expect(birthDate.planets.venus.timeLeft()).toEqual(
+    expect(birthDate.planets.venus.timeLeft()).toBeCloseTo(
       birthDate.EarthLifeExpectancy - birthDate.planets.venus.yearsOld
     );
   });
@@ -79,7 +79,7 @@ describe("PlanetaryCalculator", () => {
   });
 
   test("should return years left to live subtracting mars years old from earth age", () => {
-    expect(birthDate.planets.mars.timeLeft()).toEqual(
+    expect(birthDate.planets.mars.timeLeft()).toBeCloseTo(
       birthDate.EarthLifeExpectancy - birthDate.planets.mars.yearsOld
     );
   });
