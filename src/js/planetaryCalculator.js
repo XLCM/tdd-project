@@ -25,6 +25,13 @@ export class PlanetaryCalculator {
         timeLeft() {
           return this.lifeExpectancy - this.yearsOld;
         },
+        yearsLeft() {
+          if (this.timeLeft() > 0) {
+            return `You have ${this.timeLeft()} years left to live on Mercury.`;
+          } else {
+            return `You have lived ${-this.timeLeft()} years longer than expected on Mercury.`;
+          }
+        },
       },
       venus: {
         yearsOld: parseFloat(Math.floor((this.age / 19565712000) * 100) / 100),
