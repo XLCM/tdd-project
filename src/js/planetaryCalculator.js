@@ -5,7 +5,7 @@ export class PlanetaryCalculator {
     this.age = this.now - this.birthday;
     this.planets = {
       earth: {
-        age: this.age / 31557600000,
+        yearsOld: Math.floor((this.age / 31557600000) * 100) / 100,
       },
     };
   }

@@ -21,6 +21,6 @@ describe("PlanetaryCalculator", () => {
   });
 
   test("should calculate earth age given birthdate", () => {
-    expect(birthDate.planets.earth.age).toEqual(43);
+    expect(birthDate.planets.earth.yearsOld).toEqual(43.32);
   });
 });
