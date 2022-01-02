@@ -48,6 +48,6 @@ describe("PlanetaryCalculator", () => {
 
   // VENUS TESTS
   test("should calculate venus age given earth birthdate", () => {
-    expect(birthDate.planets.venus.yearsOld).toEqual(69.87);
+    expect(birthDate.planets.venus.yearsOld).toEqual(69.88);
   });
 });
