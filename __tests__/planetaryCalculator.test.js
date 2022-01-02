@@ -19,4 +19,8 @@ describe("PlanetaryCalculator", () => {
   test("should return difference between now and birthday in ms", () => {
     expect(birthDate.age).toBeGreaterThan(1367332933289);
   });
+
+  test("should calculate earth age given birthdate", () => {
+    expect(birthDate.planets.earth.age).toEqual(43);
+  });
 });
