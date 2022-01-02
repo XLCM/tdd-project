@@ -9,6 +9,9 @@ export class PlanetaryCalculator {
         lifeExpectancy: parseFloat(78.79),
         timeLeft: this.lifeExpectancy - this.yearsOld,
       },
+      mercury: {
+        yearsOld: parseFloat(Math.floor((this.age / 7574031360) * 100) / 100),
+      },
     };
   }
 }

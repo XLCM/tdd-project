@@ -20,6 +20,7 @@ describe("PlanetaryCalculator", () => {
     expect(birthDate.age).toBeGreaterThan(1367332933289);
   });
 
+  // EARTH TESTS
   test("should calculate earth age given birthdate", () => {
     expect(birthDate.planets.earth.yearsOld).toEqual(43.32);
   });
@@ -32,7 +33,9 @@ describe("PlanetaryCalculator", () => {
   //   expect(birthDate.planets.earth.timeLeft).toEqual(35.47);
   // });
 
+  // MERCURY TESTS
+
   test("should calculate mercury age given earth birthdate", () => {
-    expect(birthDate.planets.mercury.yearsOld).toEqual(328098055680);
+    expect(birthDate.planets.mercury.yearsOld).toEqual(180.53);
   });
 });
