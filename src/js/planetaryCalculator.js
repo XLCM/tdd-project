@@ -49,4 +49,7 @@ export class PlanetaryCalculator {
       },
     };
   }
+  // timeLeft(age) {
+  //   return this.EarthLifeExpectancy - age;
+  // }
 }

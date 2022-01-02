@@ -33,6 +33,12 @@ describe("PlanetaryCalculator", () => {
     expect(birthDate.planets.earth.timeLeft()).toEqual(35.57);
   });
 
+  test("should return years left to live on earth", () => {
+    expect(birthDate.planets.earth.yearsLeft()).toEqual(
+      "You have 35.57 years left to live on Earth."
+    );
+  });
+
   // MERCURY TESTS
   test("should calculate mercury age given earth birthdate", () => {
     expect(birthDate.planets.mercury.yearsOld).toEqual(180.53);
