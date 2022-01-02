@@ -6,6 +6,7 @@ export class PlanetaryCalculator {
     this.planets = {
       earth: {
         yearsOld: Math.floor((this.age / 31557600000) * 100) / 100,
+        lifeExpectancy: 78.79,
       },
     };
   }
