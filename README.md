@@ -27,6 +27,7 @@ Submit your birthdate into the form, and you'll see:
 * Get the repo: git clone
 * Install packages: npm install
 * Start liveserver: npm start
+* Run tests: npm test
 
 ## Known Bugs
 
@@ -43,3 +44,4 @@ Copyright (c) 02JAN2022 Phil Curran / pecurran@hotmail.com
 ## Tests
 
 See __tests__/planetaryCalculator.test.js for more info.
+Note that you may need to manually adjust some expected results, since output will vary depending on what birthday you enter, and considering that the measuring point from .now is generated with .date() at the time of form submission.
