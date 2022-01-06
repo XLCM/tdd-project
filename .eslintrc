@@ -12,7 +12,6 @@
   },
   "rules": {
     "semi": 1,
-    "indent": ["ignore", 0],
     "no-debugger": "warn",
     "no-undef": 0
   }

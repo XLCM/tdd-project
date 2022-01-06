@@ -6,12 +6,10 @@ export class PlanetaryCalculator {
     this.EarthLifeExpectancy = parseFloat(78.79);
     this.planets = {
       earth: {
-        yearsOld: parseFloat(Math.floor((this.age / 31557600000) * 100) / 100),
+        yearsOld: parseFloat(Math.round(this.age / 31557600000) * 100) / 100,
         lifeExpectancy: 78.89,
         timeLeft() {
-          return parseFloat(
-            Math.floor((this.lifeExpectancy - this.yearsOld) * 100) / 100
-          );
+          return Math.round((this.lifeExpectancy - this.yearsOld) * 100) / 100;
         },
         yearsLeft() {
           if (this.timeLeft() > 0) {
@@ -22,7 +20,7 @@ export class PlanetaryCalculator {
         },
       },
       mercury: {
-        yearsOld: parseFloat(Math.floor((this.age / 7574031360) * 100) / 100),
+        yearsOld: parseFloat(Math.round(this.age / 7574031360) * 100) / 100,
         lifeExpectancy: 78.79,
         timeLeft() {
           return parseFloat(
@@ -38,7 +36,7 @@ export class PlanetaryCalculator {
         },
       },
       venus: {
-        yearsOld: parseFloat(Math.floor((this.age / 19565712000) * 100) / 100),
+        yearsOld: parseFloat(Math.round(this.age / 19565712000) * 100) / 100,
         lifeExpectancy: 78.79,
         timeLeft() {
           return parseFloat(
@@ -54,7 +52,7 @@ export class PlanetaryCalculator {
         },
       },
       mars: {
-        yearsOld: parseFloat(Math.floor((this.age / 59328288000) * 100) / 100),
+        yearsOld: parseFloat(Math.round(this.age / 59328288000) * 100) / 100,
         lifeExpectancy: 78.79,
         timeLeft() {
           return parseFloat(
@@ -70,7 +68,7 @@ export class PlanetaryCalculator {
         },
       },
       jupiter: {
-        yearsOld: parseFloat(Math.floor((this.age / 374273136000) * 100) / 100),
+        yearsOld: parseFloat(Math.round(this.age / 374273136000) * 100) / 100,
         lifeExpectancy: 78.79,
         timeLeft() {
           return parseFloat(
@@ -86,7 +84,7 @@ export class PlanetaryCalculator {
         },
       },
       saturn: {
-        yearsOld: parseFloat(Math.floor((this.age / 927793440000) * 100) / 100),
+        yearsOld: parseFloat(Math.round(this.age / 927793440000) * 100) / 100,
         lifeExpectancy: 78.79,
         timeLeft() {
           return parseFloat(
@@ -96,14 +94,9 @@ export class PlanetaryCalculator {
         yearsLeft() {
           if (this.timeLeft() > 0) {
             return `You have ${this.timeLeft()} years left to live on Saturn.`;
-          } else {
-            return `You have lived ${-this.timeLeft()} years longer than expected on Saturn.`;
           }
         },
       },
     };
   }
-  // timeLeft(age) {
-  //   return this.EarthLifeExpectancy - age;
-  // }
 }
