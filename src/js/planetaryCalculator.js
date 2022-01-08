@@ -5,98 +5,55 @@ export class PlanetaryCalculator {
     this.age = parseInt(this.now - this.birthday);
     this.EarthLifeExpectancy = parseFloat(78.79);
     this.planets = {
-      earth: {
-        yearsOld: parseFloat(Math.round(this.age / 31557600000) * 100) / 100,
-        lifeExpectancy: 78.89,
-        timeLeft() {
-          return Math.round((this.lifeExpectancy - this.yearsOld) * 100) / 100;
-        },
-        yearsLeft() {
-          if (this.timeLeft() > 0) {
-            return `You have ${this.timeLeft()} years left to live on Earth.`;
-          } else {
-            return `You have lived ${-this.timeLeft()} years longer than expected on Earth.`;
-          }
-        },
+      Earth: {
+        name: "Earth",
+        divisor: 31557600000,
       },
-      mercury: {
-        yearsOld: parseFloat(Math.round(this.age / 7574031360) * 100) / 100,
-        lifeExpectancy: 78.79,
-        timeLeft() {
-          return parseFloat(
-            Math.floor((this.lifeExpectancy - this.yearsOld) * 100) / 100
-          );
-        },
-        yearsLeft() {
-          if (this.timeLeft() > 0) {
-            return `You have ${this.timeLeft()} years left to live on Mercury.`;
-          } else {
-            return `You have lived ${-this.timeLeft()} years longer than expected on Mercury.`;
-          }
-        },
+      Mercury: {
+        name: "Mercury",
+        divisor: 7574031360,
       },
-      venus: {
-        yearsOld: parseFloat(Math.round(this.age / 19565712000) * 100) / 100,
-        lifeExpectancy: 78.79,
-        timeLeft() {
-          return parseFloat(
-            Math.floor((this.lifeExpectancy - this.yearsOld) * 100) / 100
-          );
-        },
-        yearsLeft() {
-          if (this.timeLeft() > 0) {
-            return `You have ${this.timeLeft()} years left to live on Venus.`;
-          } else {
-            return `You have lived ${-this.timeLeft()} years longer than expected on Venus.`;
-          }
-        },
+      Venus: {
+        name: "Venus",
+        divisor: 19565712000,
       },
-      mars: {
-        yearsOld: parseFloat(Math.round(this.age / 59328288000) * 100) / 100,
-        lifeExpectancy: 78.79,
-        timeLeft() {
-          return parseFloat(
-            Math.floor((this.lifeExpectancy - this.yearsOld) * 100) / 100
-          );
-        },
-        yearsLeft() {
-          if (this.timeLeft() > 0) {
-            return `You have ${this.timeLeft()} years left to live on Mars.`;
-          } else {
-            return `You have lived ${-this.timeLeft()} years longer than expected on Mars.`;
-          }
-        },
+      Mars: {
+        name: "Mars",
+        divisor: 59328288000,
       },
-      jupiter: {
-        yearsOld: parseFloat(Math.round(this.age / 374273136000) * 100) / 100,
-        lifeExpectancy: 78.79,
-        timeLeft() {
-          return parseFloat(
-            Math.floor((this.lifeExpectancy - this.yearsOld) * 100) / 100
-          );
-        },
-        yearsLeft() {
-          if (this.timeLeft() > 0) {
-            return `You have ${this.timeLeft()} years left to live on Jupiter.`;
-          } else {
-            return `You have lived ${-this.timeLeft()} years longer than expected on Jupiter.`;
-          }
-        },
+      Jupiter: {
+        name: "Jupiter",
+        divisor: 374273136000,
       },
-      saturn: {
-        yearsOld: parseFloat(Math.round(this.age / 927793440000) * 100) / 100,
-        lifeExpectancy: 78.79,
-        timeLeft() {
-          return parseFloat(
-            Math.floor((this.lifeExpectancy - this.yearsOld) * 100) / 100
-          );
-        },
-        yearsLeft() {
-          if (this.timeLeft() > 0) {
-            return `You have ${this.timeLeft()} years left to live on Saturn.`;
-          }
-        },
+      Saturn: {
+        name: "Saturn",
+        divisor: 927793440000,
       },
     };
+  }
+  calculateAge() {
+    for (let planet in this.planets) {
+      this.planets[planet].yearsOld =
+        parseFloat(Math.round(this.age / this.planets[planet].divisor) * 100) /
+        100;
+    }
+  }
+  calculateTimeLeft() {
+    for (let planet in this.planets) {
+      this.planets[planet].timeLeft = parseFloat(
+        Math.round(
+          (this.EarthLifeExpectancy - this.planets[planet].yearsOld) * 100
+        ) / 100
+      );
+    }
+  }
+  stateTimeLeft() {
+    for (let planet in this.planets) {
+      if (this.planets[planet].timeLeft > 0) {
+        this.planets[planet].timeLeftStatement = `<p><strong>Years left to live on ${this.planets[planet].name}:</strong> ${this.planets[planet].timeLeft}</p>`;
+      } else {
+        this.planets[planet].timeLeftStatement = `<p><strong>Years lived past your life expectancy on ${this.planets[planet].name}:</strong> ${-this.planets[planet].timeLeft}</p>`;
+      }
+    }
   }
 }

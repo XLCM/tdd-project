@@ -10,6 +10,9 @@ document.getElementById("submitBirthday").addEventListener("click", (event) => {
   let day = document.getElementById("day").value;
   let year = document.getElementById("year").value;
   let myBirthday = new PlanetaryCalculator(`${month} ${day} ${year}`);
+  myBirthday.calculateAge();
+  myBirthday.calculateTimeLeft();
+  myBirthday.stateTimeLeft();
 
   // get targets for text
   let mercSection = document.getElementById("mercury");
@@ -27,36 +30,30 @@ document.getElementById("submitBirthday").addEventListener("click", (event) => {
 
   // populate text sections
   // mercury
-  mercSection.innerHTML += `<p><strong>Your age on Mercury:</strong> ${myBirthday.planets.mercury.yearsOld}</p>
-  <p>Years left to live on Mercury:</strong> ${myBirthday.planets.mercury.timeLeft()}</p>
-  <p>${myBirthday.planets.mercury.yearsLeft()}</p>`;
+  mercSection.innerHTML += `<p><strong>Your age on Mercury:</strong> ${myBirthday.planets.Mercury.yearsOld}</p>
+  <p>${myBirthday.planets.Mercury.timeLeftStatement}</p>`;
 
   // venus
-  venusSection.innerHTML += `<p><strong>Your age on Venus:</strong> ${myBirthday.planets.venus.yearsOld}</p>
-  <p><strong>Years left to live on Venus:</strong> ${myBirthday.planets.venus.timeLeft()}</p>
-  <p>${myBirthday.planets.venus.yearsLeft()}</p>`;
+  venusSection.innerHTML += `<p><strong>Your age on Venus:</strong> ${myBirthday.planets.Venus.yearsOld}</p>
+  <p>${myBirthday.planets.Venus.timeLeftStatement}</p>`;
 
   // earth
   earthSection.innerHTML += `
-  <p><strong>Your age on Earth:</strong> ${myBirthday.planets.earth.yearsOld}</p>
-  <p><strong>Years left to live on Earth:</strong> ${myBirthday.planets.earth.timeLeft()}</p>
-  <p>${myBirthday.planets.earth.yearsLeft()}</p>`;
+  <p><strong>Your age on Earth:</strong> ${myBirthday.planets.Earth.yearsOld}</p>
+  <p>${myBirthday.planets.Earth.timeLeftStatement}</p>`;
 
   // mars
   marsSection.innerHTML += `
-  <p><strong>Your age on Mars:</strong> ${myBirthday.planets.mars.yearsOld}</p>
-  <p><strong>Years left to live on Mars:</strong> ${myBirthday.planets.mars.timeLeft()}</p>
-  <p>${myBirthday.planets.mars.yearsLeft()}</p>`;
+  <p><strong>Your age on Mars:</strong> ${myBirthday.planets.Mars.yearsOld}</p>
+  <p>${myBirthday.planets.Mars.timeLeftStatement}</p>`;
 
   // jupiter
   jupiterSection.innerHTML += `
-  <p><strong>Your age on Jupiter:</strong> ${myBirthday.planets.jupiter.yearsOld}</p>
-  <p><strong>Years left to live on Jupiter:</strong> ${myBirthday.planets.jupiter.timeLeft()}</p>
-  <p>${myBirthday.planets.jupiter.yearsLeft()}</p>`;
+  <p><strong>Your age on Jupiter:</strong> ${myBirthday.planets.Jupiter.yearsOld}</p>
+  <p>${myBirthday.planets.Jupiter.timeLeftStatement}</p>`;
 
   // saturn
   saturnSection.innerHTML += `
-  <p><strong>Your age on Saturn:</strong> ${myBirthday.planets.saturn.yearsOld}</p>
-  <p><strong>Years left to live on Saturn:</strong> ${myBirthday.planets.saturn.timeLeft()}</p>
-  <p>${myBirthday.planets.saturn.yearsLeft()}</p>`;
+  <p><strong>Your age on Saturn:</strong> ${myBirthday.planets.Saturn.yearsOld}</p>
+  <p>${myBirthday.planets.Saturn.timeLeftStatement}</p>`;
 });
