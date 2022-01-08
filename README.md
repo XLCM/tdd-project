@@ -19,8 +19,7 @@
 
 Submit your birthdate into the form, and you'll see:
 * Your solar age on 6 planets
-* Years left to live on that planet based on Earth life expectancy
-* Years left or years over life expectancy on Earth
+* Years left to live or years lived over expected life expectancy based on Earth life expectancy
 
 ## Setup / Installation Requirements
 
@@ -44,4 +43,5 @@ Copyright (c) 02JAN2022 Phil Curran / pecurran@hotmail.com
 ## Tests
 
 See __tests__/planetaryCalculator.test.js for more info.
-Note that you may need to manually adjust some expected results, since output will vary depending on what birthday you enter, and considering that the measuring point from .now is generated with .date() at the time of form submission.
+* Note that you may need to manually adjust some expected results, since output will vary depending on what birthday you enter, and considering that the measuring point from .now is generated with .date() at the time of form submission.
+* Tests were written with static start (birthDate: 01JAN1972) and end (now: 01JAN2022) dates, with an age / duration of 50 years.
