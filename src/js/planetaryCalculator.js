@@ -5,22 +5,28 @@ export class PlanetaryCalculator {
     this.age = parseInt(this.now - this.birthday);
     this.EarthLifeExpectancy = parseFloat(78.79);
     this.planets = {
-      earth: {
+      Earth: {
+        name: "Earth",
         divisor: 31557600000,
       },
-      mercury: {
+      Mercury: {
+        name: "Mercury",
         divisor: 7574031360,
       },
-      venus: {
+      Venus: {
+        name: "Venus",
         divisor: 19565712000,
       },
-      mars: {
+      Mars: {
+        name: "Mars",
         divisor: 59328288000,
       },
-      jupiter: {
+      Jupiter: {
+        name: "Jupiter",
         divisor: 374273136000,
       },
-      saturn: {
+      Saturn: {
+        name: "Saturn",
         divisor: 927793440000,
       },
     };
@@ -39,6 +45,15 @@ export class PlanetaryCalculator {
           (this.EarthLifeExpectancy - this.planets[planet].yearsOld) * 100
         ) / 100
       );
+    }
+  }
+  stateTimeLeft() {
+    for (let planet in this.planets) {
+      if (this.planets[planet].timeLeft > 0) {
+        this.planets[planet].timeLeftStatement = `<p><strong>Years left to live on ${this.planets[planet].name}:</strong> ${this.planets[planet].timeLeft}</p>`;
+      } else {
+        this.planets[planet].timeLeftStatement = `<p><strong>Years lived past your life expectancy on ${this.planets[planet].name}:</strong> ${-this.planets[planet].timeLeft}</p>`;
+      }
     }
   }
 }

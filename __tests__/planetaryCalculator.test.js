@@ -27,117 +27,152 @@ describe("PlanetaryCalculator", () => {
     birthDate = new PlanetaryCalculator("1972 January 1");
     birthDate.calculateAge();
     birthDate.calculateTimeLeft();
+    birthDate.stateTimeLeft();
   });
 
   // EARTH TESTS
-  test("should calculate earth age given birthdate", () => {
-    expect(birthDate.planets.earth.yearsOld).toEqual(50);
+  test("Earth: should calculate earth age given birthdate", () => {
+    expect(birthDate.planets.Earth.yearsOld).toEqual(50);
   });
 
-  test("should return difference between life expectancy and current age", () => {
-    expect(birthDate.planets.earth.timeLeft).toEqual(28.79);
+  test("Earth: should return difference between life expectancy and current age", () => {
+    expect(birthDate.planets.Earth.timeLeft).toEqual(28.79);
+  });
+
+  test("Earth: should return years left to live r/t life expectancy", () => {
+    expect(birthDate.planets.Earth.timeLeftStatement).toEqual("<p><strong>Years left to live on Earth:</strong> 28.79</p>");
   });
 
   // MERCURY TESTS
-  test("should calculate mercury age given earth birthdate", () => {
-    expect(birthDate.planets.mercury.yearsOld).toEqual(208);
+  test("Mercury: should calculate mercury age given earth birthdate", () => {
+    expect(birthDate.planets.Mercury.yearsOld).toEqual(208);
   });
 
-  test("should return years left to live subtracting mercury years old from earth age", () => {
-    expect(birthDate.planets.mercury.timeLeft).toBeCloseTo(
-      birthDate.EarthLifeExpectancy - birthDate.planets.mercury.yearsOld
+  test("Mercury: should return years left to live subtracting mercury years old from earth age", () => {
+    expect(birthDate.planets.Mercury.timeLeft).toBeCloseTo(
+      birthDate.EarthLifeExpectancy - birthDate.planets.Mercury.yearsOld
     );
+  });
+
+  test("Mercury: should return years left to live r/t life expectancy", () => {
+    expect(birthDate.planets.Mercury.timeLeftStatement).toEqual("<p><strong>Years lived past your life expectancy on Mercury:</strong> 129.21</p>");
   });
 
   // VENUS TESTS
-  test("should calculate venus age given earth birthdate", () => {
-    expect(birthDate.planets.venus.yearsOld).toEqual(81);
+  test("Venus: should calculate venus age given Earth birthdate", () => {
+    expect(birthDate.planets.Venus.yearsOld).toEqual(81);
   });
 
-  test("should return years left to live subtracting venus years old from earth age", () => {
-    expect(birthDate.planets.venus.timeLeft).toBeCloseTo(
-      birthDate.EarthLifeExpectancy - birthDate.planets.venus.yearsOld
+  test("Venus: should return years left to live subtracting venus years old from earth age", () => {
+    expect(birthDate.planets.Venus.timeLeft).toBeCloseTo(
+      birthDate.EarthLifeExpectancy - birthDate.planets.Venus.yearsOld
     );
+  });
+
+  test("Venus: should return years left to live r/t life expectancy", () => {
+    expect(birthDate.planets.Venus.timeLeftStatement).toEqual("<p><strong>Years lived past your life expectancy on Venus:</strong> 2.21</p>");
   });
 
   // MARS TESTS
-  test("should calculate mars age given earth birthdate", () => {
-    expect(birthDate.planets.mars.yearsOld).toEqual(27);
+  test("Mars: should calculate Mars age given earth birthdate", () => {
+    expect(birthDate.planets.Mars.yearsOld).toEqual(27);
   });
 
-  test("should return years left to live subtracting mars years old from earth age", () => {
-    expect(birthDate.planets.mars.timeLeft).toBeCloseTo(
-      birthDate.EarthLifeExpectancy - birthDate.planets.mars.yearsOld
+  test("Mars: should return years left to live subtracting mars years old from earth age", () => {
+    expect(birthDate.planets.Mars.timeLeft).toBeCloseTo(
+      birthDate.EarthLifeExpectancy - birthDate.planets.Mars.yearsOld
     );
+  });
+
+  test("Mars: should return years left to live r/t life expectancy", () => {
+    expect(birthDate.planets.Mars.timeLeftStatement).toEqual("<p><strong>Years left to live on Mars:</strong> 51.79</p>");
   });
 
   // JUPITER TESTS
-  test("should calculate jupiter age given earth birthdate", () => {
-    expect(birthDate.planets.jupiter.yearsOld).toEqual(4);
+  test("Jupiter: should calculate Jupiter age given earth birthdate", () => {
+    expect(birthDate.planets.Jupiter.yearsOld).toEqual(4);
   });
 
-  test("should return years left to live subtracting jupiter years old from earth age", () => {
-    expect(birthDate.planets.jupiter.timeLeft).toEqual(74.79);
+  test("Jupiter: should return years left to live subtracting jupiter years old from earth age", () => {
+    expect(birthDate.planets.Jupiter.timeLeft).toEqual(74.79);
+  });
+
+  test("Jupiter: should return years left to live r/t life expectancy", () => {
+    expect(birthDate.planets.Jupiter.timeLeftStatement).toEqual("<p><strong>Years left to live on Jupiter:</strong> 74.79</p>");
   });
 
   // SATURN TESTS
-  test("should calculate saturn age given earth birthdate", () => {
-    expect(birthDate.planets.saturn.yearsOld).toEqual(2);
+  test("Saturn: should calculate saturn age given earth birthdate", () => {
+    expect(birthDate.planets.Saturn.yearsOld).toEqual(2);
   });
 
-  test("should return years left to live subtracting jupiter years old from earth age", () => {
-    expect(birthDate.planets.saturn.timeLeft).toEqual(
-      birthDate.EarthLifeExpectancy - birthDate.planets.saturn.yearsOld
+  test("Saturn: should return years left to live subtracting jupiter years old from earth age", () => {
+    expect(birthDate.planets.Saturn.timeLeft).toEqual(
+      birthDate.EarthLifeExpectancy - birthDate.planets.Saturn.yearsOld
     );
   });
 
-  // // Tests requiring nonconstant birthdate and age values
+  test("Saturn: should return years left to live r/t life expectancy", () => {
+    expect(birthDate.planets.Saturn.timeLeftStatement).toEqual("<p><strong>Years left to live on Saturn:</strong> 76.79</p>");
+  });
+
+  // Tests requiring nonconstant birthdate and age values
 
   // Mercury
-  test("Mercury: should return time left to live on Mercury", () => {
+  test("Mercury: should return years left to live r/t life expectancy", () => {
     let birthDate = new PlanetaryCalculator("2018 September 4");
-    expect(birthDate.planets.mercury.yearsLeft).toEqual(
-      "You have 64.79 years left to live on Mercury."
-    );
+    birthDate.calculateAge();
+    birthDate.calculateTimeLeft();
+    birthDate.stateTimeLeft();
+    expect(birthDate.planets.Mercury.timeLeftStatement).toEqual("<p><strong>Years left to live on Mercury:</strong> 64.79</p>");
   });
 
-  // // Earth
-  // test("Earth: should return time left to live on Earth", () => {
-  //   let birthDate = new PlanetaryCalculator("1878 September 4");
-  //   expect(birthDate.planets.earth.yearsLeft()).toEqual(
-  //     "You have lived 64.11 years longer than expected on Earth."
-  //   );
-  // });
+  // Earth
+  test("Earth: should return years left to live r/t life expectancy", () => {
+    let birthDate = new PlanetaryCalculator("1878 September 4");
+    birthDate.calculateAge();
+    birthDate.calculateTimeLeft();
+    birthDate.stateTimeLeft();
+    expect(birthDate.planets.Earth.timeLeftStatement).toEqual("<p><strong>Years lived past your life expectancy on Earth:</strong> 64.21</p>");
+  });
 
-  // // Venus
-  // test("Venus: should return time left to live on Venus", () => {
-  //   let birthDate = new PlanetaryCalculator("1878 September 4");
-  //   expect(birthDate.planets.venus.yearsLeft()).toEqual(
-  //     "You have lived 152.21 years longer than expected on Venus."
-  //   );
-  // });
+  // Venus
+  test("Venus: should return years left to live r/t life expectancy", () => {
+    let birthDate = new PlanetaryCalculator("1878 September 4");
+    birthDate.calculateAge();
+    birthDate.calculateTimeLeft();
+    birthDate.stateTimeLeft();
+    expect(birthDate.planets.Venus.timeLeftStatement).toEqual("<p><strong>Years lived past your life expectancy on Venus:</strong> 152.21</p>");
+  });
 
-  // // Mars
-  // test("Mars: should return time left to live on Mars", () => {
-  //   let birthDate = new PlanetaryCalculator("1778 September 4");
-  //   expect(birthDate.planets.mars.yearsLeft()).toEqual(
-  //     "You have lived 50.21 years longer than expected on Mars."
-  //   );
-  // });
+  // Mars
+  test("Mars: should return years left to live r/t life expectancy", () => {
+    let birthDate = new PlanetaryCalculator("1778 September 4");
+    birthDate.calculateAge();
+    birthDate.calculateTimeLeft();
+    birthDate.stateTimeLeft();
+    expect(birthDate.planets.Mars.timeLeftStatement).toEqual("<p><strong>Years lived past your life expectancy on Mars:</strong> 50.21</p>");
+  });
 
-  // // Jupiter
-  // test("Jupiter: should return time left to live on Jupiter", () => {
-  //   let birthDate = new PlanetaryCalculator("998 September 4");
-  //   expect(birthDate.planets.jupiter.yearsLeft()).toEqual(
-  //     "You have lived 7.21 years longer than expected on Jupiter."
-  //   );
-  // });
+  // Jupiter
+  test("Jupiter: should return years left to live r/t life expectancy", () => {
+    let birthDate = new PlanetaryCalculator("998 September 4");
+    birthDate.calculateAge();
+    birthDate.calculateTimeLeft();
+    birthDate.stateTimeLeft();
+    expect(birthDate.planets.Jupiter.timeLeftStatement).toEqual("<p><strong>Years lived past your life expectancy on Jupiter:</strong> 7.21</p>");
+  });
+
+// Saturn can't really be tested because it's time cycle is too long for earch and .date()
 
   // // Saturn
-  // test("Jupiter: should return time left to live on Jupiter", () => {
-  //   let birthDate = new PlanetaryCalculator("998 September 4");
-  //   expect(birthDate.planets.jupiter.yearsLeft()).toEqual(
-  //     "You have lived 7.21 years longer than expected on Jupiter."
-  //   );
+  // test("Saturn: should return years left to live r/t life expectancy", () => {
+  //   let birthDate = new PlanetaryCalculator("2 September 4");
+  //   birthDate.now = new Date("9022 January 1").getTime();
+  //   birthDate.calculateAge();
+  //   birthDate.calculateTimeLeft();
+  //   birthDate.stateTimeLeft();
+  //   expect(birthDate.planets.Saturn.timeLeftStatement).toEqual("<p><strong>Years lived past your life expectancy on Saturn:</strong> 7.21</p>");
   // });
+
 });
